@@ -27,7 +27,26 @@
     <div class="top"></div>
     <div id="container" class="overall"></div>
     <div id="" class="test">
-        <div id="" class="test-box">
+
+        <div id="test_re" hidden="true" class="test-box">
+            <h2 class="start_title">测试结果</h2>
+            <h3>BMI:
+                <a style="color: rgb(255, 247, 190);" id='result_bmi'></a>
+            </h3>
+            <h3>体重:
+                <a style="color: rgb(255, 247, 190);" id='result_wei'></a>
+            </h3>
+            <h3>身高:
+                <a style="color: rgb(255, 247, 190);" id='result_hi'></a>
+            </h3>
+            <h3><a id="text_tar_re">距离目标:</a>
+                <a style="color: rgb(255, 247, 190);" id='result_rucul'></a>
+                <a id="text_tar_re_c"></a>
+            </h3>
+        </div>
+
+
+        <div id="test_start" class="test-box">
             <h2 class="start_title">开始测试</h2><br>
             <form>
                 <div class="user-box">
@@ -46,6 +65,7 @@
                 </a>
             </form>
         </div>
+
     </div>
     <div id="test" class="target"></div>
 
@@ -53,7 +73,7 @@
         var BMIbody = [];
         var hie = [];
         var wei = [];
-        var scr = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
+        var scr = [target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart, target_chart];
         // 图表配置
         var options = {
             chart: {
@@ -88,16 +108,28 @@
             },
             series: [{ // 数据列
                 name: '体重(KG)', // 数据列名
-                data: wei // 数据
+                data: wei, // 数据
+                color: "rgb(149, 0, 255)"
             }, {
                 name: '身高(cm)',
-                data: hie
+                data: hie,
+                color: "blue"
             }, {
                 name: 'BMI',
-                data: BMIbody
+                data: BMIbody,
+                color: "orange"
+            }, {
+                name: "BMI正常范围(最高)",
+                data: [24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9, 24.9],
+                color: "rgb(255, 204, 108)"
+            }, {
+                name: "BMI正常范围(最低)",
+                data: [18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5, 18.5],
+                color: "rgb(179, 117, 0)"
             }, {
                 name: w_h_t,
-                data: scr
+                data: scr,
+                color: "red"
             }]
         };
         get_up();
@@ -117,7 +149,7 @@
                     //饼状图-pie
             },
             title: {
-                text: '目标',
+                text: target_name,
                 style: {
                     color: 'white',
                     fontWeight: "blod",
@@ -142,10 +174,10 @@
                 name: '目标达成进度',
                 data: [{
                         name: '已达成目标',
-                        y: 20,
+                        y: have,
                         sliced: true, // 突出显示某个扇区，表示强调
                     },
-                    ['待达成', 80]
+                    ['待达成', not_have]
                 ]
             }]
         };
