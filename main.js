@@ -69,7 +69,7 @@ function login(time) {
     }
     if (time == '3') {
         localStorage.setItem("tar", document.getElementById("tar").value);
-        if (Number(document.getElementById("tar").value) < 18) {
+        if (Number(localStorage.getItem("age") < 18)) {
             localStorage.setItem("target_typ", "未成年");
         } else {
             localStorage.setItem("target_typ", "成年");
