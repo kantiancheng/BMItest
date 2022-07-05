@@ -1,7 +1,9 @@
 //变量定义
 var new_page;
 var time_w;
+var target_chart = Number(localStorage.getItem("tar"));
 if (Number(localStorage.getItem("age") < 18)) { w_h_t = "目标身高(cm)"; } else { w_h_t = "目标体重(kg)"; }
+var target_name;
 var calculate = [
     [0, 0, 0],
     [0, 0, 0],
@@ -67,6 +69,11 @@ function login(time) {
     }
     if (time == '3') {
         localStorage.setItem("tar", document.getElementById("tar").value);
+        if (Number(document.getElementById("tar").value) < 18) {
+            localStorage.setItem("target_typ", "未成年");
+        } else {
+            localStorage.setItem("target_typ", "成年");
+        }
         window.location = "./index.html";
         localStorage.setItem("calculate", JSON.stringify(calculate));
     }
@@ -77,6 +84,12 @@ onload = function loadon() {
     document.getElementById("inform").hidden = true;
     if (new_page == "设定目标") login('2');
     beb();
+    var d = new Date();
+    d = d.getUTCDay();
+    lst_d = localStorage.getItem("lst_d");
+    if (d == lst_d) {
+        resulte();
+    }
 }
 
 //提示
@@ -125,6 +138,8 @@ function start_test() {
     lst_d = localStorage.getItem("lst_d");
     if (d == lst_d) {
         inform('今日已经测试过了', 5000);
+    } else if (document.getElementById("haic").value == "" || document.getElementById("weik").value == "" || document.getElementById("haic").value == null || document.getElementById("weik").value == null) {
+        inform('身高或体重不能为空', 3000);
     } else {
         var haic = document.getElementById("haic").value;
         var weik = document.getElementById("weik").value;
@@ -133,19 +148,76 @@ function start_test() {
         var resultBMI = weik / heightsquare;
         //身高，体重，BMI
         var pushi = [haic, weik, resultBMI];
+        localStorage.setItem("re_BMI", resultBMI);
+        localStorage.setItem("re_HI", haic);
+        localStorage.setItem("re_WI", weik);
         calculate.push(pushi);
         localStorage.setItem("lst_d", d);
         localStorage.setItem("calculate", JSON.stringify(calculate));
         if (Number(localStorage.getItem("age")) < 18) {
             localStorage.setItem("last", haic);
         } else { localStorage.setItem("last", weik); }
+        if (localStorage.getItem("test_fiest_times") == null) {
+            if (Number(localStorage.getItem("age")) < 18) {
+                localStorage.setItem("test_fiest_times", haic);
+            } else { localStorage.setItem("test_fiest_times", weik); }
+        }
         location.reload();
     }
 }
 
+function resulte() {
+    document.getElementById("test_start").hidden = true;
+    document.getElementById("test_re").hidden = false;
+    var targertnum = Number(localStorage.getItem("tar"));
+    if (localStorage.getItem("target_typ") == "未成年") {
+        targertnum = targertnum - Number(localStorage.getItem("re_HI"));
+        document.getElementById("text_tar_re").innerHTML = "距离目标身高:";
+        document.getElementById("text_tar_re_c").innerHTML = "cm";
+    } else {
+        targertnum = targertnum - Number(localStorage.getItem("re_WI"));
+        document.getElementById("text_tar_re").innerHTML = "距离目标体重:";
+        document.getElementById("text_tar_re_c").innerHTML = "kg";
+    }
+    if (targertnum < 0) {
+        targertnum = targertnum * -1;
+    }
+    document.getElementById("result_bmi").innerHTML = localStorage.getItem("re_BMI");
+    document.getElementById("result_wei").innerHTML = localStorage.getItem("re_WI");
+    document.getElementById("result_hi").innerHTML = localStorage.getItem("re_HI");
+    document.getElementById("result_rucul").innerHTML = targertnum;
+}
+
+var have;
+var not_have;
 //目标达成进度
+targetpersent();
+
 function targetpersent() {
+    var fiest_time = Number(localStorage.getItem("test_fiest_times"));
     var targertnum = Number(localStorage.getItem("tar"));
     var lastt = Number(localStorage.getItem("last"));
-    var have = lastt / targertnum * 100;
+    if (fiest_time == 0) {
+        target_name = "目标进度";
+    } else {
+        if (fiest_time > targertnum) {
+            if (localStorage.getItem("target_typ") == "未成年") {
+                //更改目标，待定
+            }
+            target_name = "减肥目标进度";
+        }
+        if (fiest_time < targertnum) {
+            if (localStorage.getItem("target_typ") == "未成年") {
+                target_name = "增高目标进度";
+            } else {
+                target_name = "增肥目标进度";
+            }
+        }
+    }
+    if (fiest_time > targertnum) {
+        var cocklast = lastt - targertnum;
+        lastt = targertnum - cocklast;
+    }
+    have = lastt / targertnum * 100;
+    not_have = 100 - have;
 }
