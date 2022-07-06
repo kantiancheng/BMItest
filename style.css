@@ -392,3 +392,29 @@ h3 {
     font-weight: bolder;
     text-align: center;
 }
+
+#landscape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: black;
+}
+
+.landscape_t {
+    font-size: 900%;
+    font-weight: bolder;
+    color: rgb(255, 250, 250);
+    margin-top: 50%;
+    text-align: center;
+}
+
+.img {
+    text-align: center;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.img_d {
+    text-align: center;
+}
