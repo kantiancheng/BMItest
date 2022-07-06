@@ -90,6 +90,7 @@ onload = function loadon() {
     if (d == lst_d) {
         resulte();
     }
+    hengshuping();
 }
 
 //提示
