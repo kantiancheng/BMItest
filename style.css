@@ -65,6 +65,122 @@ rect {
     border-radius: 10px;
 }
 
+@media screen and (max-height:860px) {
+    .top {
+        width: 100%;
+        height: calc(35vh);
+    }
+    .test {
+        position: absolute;
+        left: 25%;
+        top: 100%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .target {
+        position: absolute;
+        left: 75%;
+        top: 100%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-height:750px) {
+    .top {
+        width: 100%;
+        height: calc(35vh);
+    }
+    .test {
+        position: absolute;
+        left: 25%;
+        top: 105%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .target {
+        position: absolute;
+        left: 75%;
+        top: 105%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-height:705px) {
+    .top {
+        width: 100%;
+        height: calc(35vh);
+    }
+    .test {
+        position: absolute;
+        left: 25%;
+        top: 109%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .target {
+        position: absolute;
+        left: 75%;
+        top: 109%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .top {
+        width: 100%;
+        height: calc(20vh);
+    }
+    .test {
+        position: absolute;
+        left: 25%;
+        top: 70%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .target {
+        position: absolute;
+        left: 75%;
+        top: 70%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        border-radius: 10px;
+    }
+}
+
 @media screen and (max-height:673px) {
     .top {
         width: 100%;
@@ -77,9 +193,7 @@ rect {
         width: 44%;
         padding: 40px;
         transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, .5);
         box-sizing: border-box;
-        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
         border-radius: 10px;
     }
     .target {
