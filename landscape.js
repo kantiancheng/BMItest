@@ -1,5 +1,5 @@
-function hengshuping(typ) {
-    if (typ == '提示横屏') {
+function hengshuping() {
+    if (new_page == "HOME") {
         if (window.orientation == 180 || window.orientation == 0) {
             document.getElementById("landscape").hidden = false;
         }
@@ -7,7 +7,8 @@ function hengshuping(typ) {
             document.getElementById("landscape").hidden = true;
         }
     }
-    if (typ == '提示竖屏') {
+
+    if (new_page == "代谢测试") {
         if (window.orientation == 180 || window.orientation == 0) {
             document.getElementById("landscape").hidden = true;
         }
