@@ -222,3 +222,108 @@ function targetpersent() {
     have = lastt / targertnum * 100;
     not_have = 100 - have;
 }
+
+
+//减肥周期计算
+/*
+ * BMR计算
+ * BMR (男性) = (13.7x体重干克>) + (5.0x身高厘米>) - (6.8x年龄) + 66
+ * BMR (女性)= (9.6x体重干克>)+ (1.8x身高厘米>) -(4.7x年龄)+655
+ * BMR = 每日千卡消耗量自然（无肌肉运动）
+ * 
+ * 计算加上肌肉运动的消耗(千卡)
+ * 
+ * 计算 每天摄入热量 -（每日千卡消耗量自然（无肌肉运动） + 肌肉运动的消耗）= 缺口
+ * 缺口 = 每日消耗（千卡）
+ * 减掉1公斤脂肪大约需要消耗7700千卡-9500千卡热量，按7700千卡计算。
+ * 7700千卡 × 减肥目标公斤 = 总共千卡
+ * 减肥目标需要的周期天数 = 总共千卡 ÷ 千卡/天 = 减肥天数
+ */
+
+
+//BMR
+var BMR_re;
+
+function get_BMR() {
+    document.getElementById("t_s").hidden = true;
+    document.getElementById("t_d").hidden = false;
+    //性别
+    myselect = document.getElementById("BMR_sex");
+    var index = myselect.selectedIndex;
+    var gender = myselect[index].value;
+    //年龄
+    var age_BMR = Number(document.getElementById("BMR_age").value);
+    //体重（千克）
+    var weight = Number(document.getElementById("BMR_wi").value);
+    //身高厘米
+    var stature = Number(document.getElementById("BMR_hi").value);
+
+    if (gender == "M") {
+        var BMR_re = (weight * 13.7) + (5 * stature) - (6.8 * age_BMR) + 66;
+    }
+    if (gender == "F") {
+        var BMR_re = (weight * 9.6) + (1.8 * stature) - (4.7 * age_BMR) + 655;
+    }
+    //无运动
+    //BMR_re
+
+    //肌肉消耗(千卡)
+    var BMR_mus;
+    //摄入热量(千卡)
+    var BMR_hu = document.getElementById("BMR_hu").value;
+    //运动时间
+    var BMR_time = document.getElementById("BMR_tim").value;
+
+    myselectit = document.getElementById("BMR_sl");
+    var indexit = myselectit.selectedIndex;
+    var genderit = myselectit[indexit].value;
+    //18
+    if (genderit == 'cycling') { BMR_mus = 90; }
+    if (genderit == 'walk') { BMR_mus = 93; }
+    if (genderit == 'golf') { BMR_mus = 111; }
+    if (genderit == 'bowling') { BMR_mus = 120; }
+    if (genderit == 'go') { BMR_mus = 132; }
+    if (genderit == 'Boating') { BMR_mus = 132; }
+    if (genderit == 'dancing') { BMR_mus = 150; }
+    if (genderit == 'Badminton') { BMR_mus = 153; }
+    if (genderit == 'Volleyball') { BMR_mus = 153; }
+    if (genderit == 'Table_tennis') { BMR_mus = 159; }
+    if (genderit == 'hockey') { BMR_mus = 186; }
+    if (genderit == 'skating') { BMR_mus = 240; }
+    if (genderit == 'Jump') { BMR_mus = 270; }
+    if (genderit == 'Jogging') { BMR_mus = 282; }
+    if (genderit == 'Boxing') { BMR_mus = 342; }
+    if (genderit == 'Frog_swimming') { BMR_mus = 354; }
+    if (genderit == 'swimming') { BMR_mus = 525; }
+    if (genderit == 'No_movement') { BMR_mus = 0; }
+    BMR_mus = (BMR_mus / 30) * BMR_time;
+
+    var BMR_tark = document.getElementById("BMR_tark").value
+
+    var window_BMR = BMR_hu - (BMR_mus + BMR_re);
+    var window_BMR$;
+    if (window_BMR < 0) {
+        window_BMR$ = "消耗";
+        window_BMR = window_BMR * -1;
+    } else {
+        window_BMR$ = "增加";
+    }
+    //窗口
+    document.getElementById("result_dayk").innerHTML = window_BMR$ + window_BMR + '千卡';
+    var BMR_tarkk = BMR_tark * 7700;
+    var BMR_day = BMR_tarkk / window_BMR;
+    //日期
+    var BMR_day$;
+    if (BMR_day > 0) {
+        BMR_day$ = "∞";
+        BMR_day = '';
+    } else {
+        BMR_day$ = "";
+        BMR_day = BMR_day * -1;
+    }
+    document.getElementById("result_day").innerHTML = BMR_day.toFixed(0) + BMR_day$;
+}
+
+/*var myselect = document.getElementById("BMR_sl");
+var index = myselect.selectedIndex;
+myselect[index].value;*/
