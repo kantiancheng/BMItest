@@ -317,11 +317,14 @@ function get_BMR() {
     if (BMR_day > 0) {
         BMR_day$ = "∞";
         BMR_day = '';
+        document.getElementById("result_com").innerHTML = "你的每日摄入热量大于你消耗的，所以导致无法减重反而增重。你可以增加运动量或减少热量的摄入。";
     } else {
-        BMR_day$ = "";
+        BMR_day$ = "你的热量消耗大于你摄入的，你正在减重，如果那想增加速度你可以增加运动量或减少热量的摄入。";
         BMR_day = BMR_day * -1;
+        document.getElementById("result_com").innerHTML = "";
+        BMR_day = Number(BMR_day).toFixed();
     }
-    document.getElementById("result_day").innerHTML = BMR_day.toFixed(0) + BMR_day$;
+    document.getElementById("result_day").innerHTML = BMR_day + BMR_day$;
 }
 
 /*var myselect = document.getElementById("BMR_sl");
