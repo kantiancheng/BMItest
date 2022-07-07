@@ -160,7 +160,7 @@ rect {
     .test {
         position: absolute;
         left: 25%;
-        top: 70%;
+        top: 84%;
         width: 44%;
         padding: 40px;
         transform: translate(-50%, -50%);
@@ -170,7 +170,7 @@ rect {
     .target {
         position: absolute;
         left: 75%;
-        top: 70%;
+        top: 84%;
         width: 44%;
         padding: 40px;
         transform: translate(-50%, -50%);
@@ -417,4 +417,32 @@ h3 {
 
 .img_d {
     text-align: center;
+}
+
+#BMR {
+    top: 6px;
+    left: 6px;
+    position: fixed;
+    background-color: #090e15c5;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    height: 50px;
+    width: 200px;
+    z-index: 10;
+}
+
+#BMR_in {
+    margin: 0 auto;
+    padding-top: 2px;
+    font-size: xx-large;
+}
+
+.sleMF {
+    background-color: #19293a;
+    height: 40px;
+    width: 100px;
+    font-size: large;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
 }
