@@ -90,7 +90,7 @@ onload = function loadon() {
     if (d == lst_d) {
         resulte();
     }
-    hengshuping();
+    if (new_page == "HOME") hengshuping();
 }
 
 //提示
