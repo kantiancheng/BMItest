@@ -90,8 +90,7 @@ onload = function loadon() {
     if (d == lst_d) {
         resulte();
     }
-    if (new_page == "HOME") hengshuping('提示横屏');
-    if (new_page == "代谢测试") hengshuping('提示竖屏');
+    hengshuping();
 }
 
 //提示
