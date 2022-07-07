@@ -303,7 +303,7 @@ function get_BMR() {
     var window_BMR = BMR_hu - (BMR_mus + BMR_re);
     var window_BMR$;
     if (window_BMR < 0) {
-        window_BMR$ = "消耗";
+        window_BMR$ = "净消耗";
         window_BMR = window_BMR * -1;
     } else {
         window_BMR$ = "增加";
@@ -311,17 +311,17 @@ function get_BMR() {
     //窗口
     document.getElementById("result_dayk").innerHTML = window_BMR$ + window_BMR + '千卡';
     var BMR_tarkk = BMR_tark * 7700;
+    //减肥目标需要的周期天数 = 总共千卡 ÷ 千卡/天
     var BMR_day = BMR_tarkk / window_BMR;
     //日期
     var BMR_day$;
-    if (BMR_day > 0) {
+    if (BMR_day < 0) {
         BMR_day$ = "∞";
         BMR_day = '';
         document.getElementById("result_com").innerHTML = "你的每日摄入热量大于你消耗的，所以导致无法减重反而增重。你可以增加运动量或减少热量的摄入。";
     } else {
-        BMR_day$ = "你的热量消耗大于你摄入的，你正在减重，如果那想增加速度你可以增加运动量或减少热量的摄入。";
-        BMR_day = BMR_day * -1;
-        document.getElementById("result_com").innerHTML = "";
+        BMR_day$ = "";
+        document.getElementById("result_com").innerHTML = "你的热量消耗大于你摄入的，你正在减重，如果那想增加速度你可以增加运动量或减少热量的摄入。";
         BMR_day = Number(BMR_day).toFixed();
     }
     document.getElementById("result_day").innerHTML = BMR_day + BMR_day$;
