@@ -40,14 +40,16 @@ var calculate30 = [];
 
 //检测是否是新用户
 function beb() {
-    if (localStorage.getItem("age") == null || localStorage.getItem("age") == "") {
-        if (new_page != "设定基础") {
-            window.location = "./login_age.html";
+    if (new_page != '代谢测试') {
+        if (localStorage.getItem("age") == null || localStorage.getItem("age") == "") {
+            if (new_page != "设定基础") {
+                window.location = "./login_age.html";
+            }
         }
-    }
-    if (localStorage.getItem("tar") != null && localStorage.getItem("tar") != "") {
-        if (new_page == "设定基础" || new_page == "设定目标") {
-            window.location = "./index.html";
+        if (localStorage.getItem("tar") != null && localStorage.getItem("tar") != "") {
+            if (new_page == "设定基础" || new_page == "设定目标") {
+                window.location = "./index.html";
+            }
         }
     }
 }
