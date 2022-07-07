@@ -298,7 +298,7 @@ function get_BMR() {
     if (genderit == 'No_movement') { BMR_mus = 0; }
     BMR_mus = (BMR_mus / 30) * BMR_time;
 
-    var BMR_tark = document.getElementById("BMR_tark").value
+    var BMR_tark = weight - document.getElementById("BMR_tark").value;
 
     var window_BMR = BMR_hu - (BMR_mus + BMR_re);
     var window_BMR$;
