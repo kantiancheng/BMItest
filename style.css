@@ -409,9 +409,23 @@ h3 {
     text-align: center;
 }
 
+.landscape_tt {
+    font-size: 600%;
+    font-weight: bolder;
+    color: rgb(255, 250, 250);
+    margin-top: 1%;
+    text-align: center;
+}
+
 .img {
     text-align: center;
     height: 300px;
+    margin: 0 auto;
+}
+
+.imgg {
+    text-align: center;
+    height: 150px;
     margin: 0 auto;
 }
 
@@ -445,4 +459,33 @@ h3 {
     font-size: large;
     color: rgb(255, 255, 255);
     border-radius: 10px;
+}
+
+@media screen and (max-height:673px) {
+    .top {
+        width: 100%;
+        height: calc(46vh);
+    }
+    .test {
+        position: absolute;
+        left: 25%;
+        top: 160%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .target {
+        position: absolute;
+        left: 75%;
+        top: 160%;
+        width: 44%;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        border-radius: 10px;
+    }
 }
