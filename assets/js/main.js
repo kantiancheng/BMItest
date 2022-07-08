@@ -43,12 +43,12 @@ function beb() {
     if (new_page != '代谢测试') {
         if (localStorage.getItem("age") == null || localStorage.getItem("age") == "") {
             if (new_page != "设定基础") {
-                window.location = ".../login/login_age.html";
+                window.location = "./login/login_age.html";
             }
         }
         if (localStorage.getItem("tar") != null && localStorage.getItem("tar") != "") {
             if (new_page == "设定基础" || new_page == "设定目标") {
-                window.location = ".../index.html";
+                window.location = "./index.html";
             }
         }
     }
@@ -76,7 +76,7 @@ function login(time) {
         } else {
             localStorage.setItem("target_typ", "成年");
         }
-        window.location = "./index.html";
+        window.location = "../index.html";
         localStorage.setItem("calculate", JSON.stringify(calculate));
     }
 }
