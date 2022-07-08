@@ -170,8 +170,10 @@ function start_test() {
 }
 
 function resulte() {
-    document.getElementById("test_start").hidden = true;
-    document.getElementById("test_re").hidden = false;
+    if (new_page == "HOME") {
+        document.getElementById("test_start").hidden = true;
+        document.getElementById("test_re").hidden = false;
+    }
     var targertnum = Number(localStorage.getItem("tar"));
     if (localStorage.getItem("target_typ") == "未成年") {
         targertnum = targertnum - Number(localStorage.getItem("re_HI"));
