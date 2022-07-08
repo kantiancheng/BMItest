@@ -89,8 +89,10 @@ onload = function loadon() {
     var d = new Date();
     d = d.getUTCDay();
     lst_d = localStorage.getItem("lst_d");
-    if (d == lst_d) {
-        resulte();
+    if (new_page == "HOME") {
+        if (d == lst_d) {
+            resulte();
+        }
     }
     hengshuping();
 }
@@ -170,10 +172,8 @@ function start_test() {
 }
 
 function resulte() {
-    if (new_page == "HOME") {
-        document.getElementById("test_start").hidden = true;
-        document.getElementById("test_re").hidden = false;
-    }
+    document.getElementById("test_start").hidden = true;
+    document.getElementById("test_re").hidden = false;
     var targertnum = Number(localStorage.getItem("tar"));
     if (localStorage.getItem("target_typ") == "未成年") {
         targertnum = targertnum - Number(localStorage.getItem("re_HI"));
