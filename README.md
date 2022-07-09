@@ -34,7 +34,7 @@ https://kantiancheng.github.io/BMItest/Weight-loss-cycle-calculation/index.html
 
 <br>
 
-# API
+# API部分
 <br>
 
 ## BMI计算
