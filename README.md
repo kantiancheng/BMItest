@@ -1,5 +1,4 @@
---tw-bg-opacity: 1;
-background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
+
 # BMI test
 
 - 免登录在线BMI测试
@@ -156,4 +155,4 @@ bmi_result;
 
 
 # 鸣谢 Thanks
-<a bgcolor=#46465c href="[https://www.browserstack.com/"><img height="80" src="https://wp-assets.highcharts.com/svg/highcharts-logo.svg" alt="BrowserStack Logo"></a>
+<a href="[https://www.browserstack.com/"><img height="80" src="https://wp-assets.highcharts.com/svg/highcharts-logo.svg" alt="BrowserStack Logo"></a>
