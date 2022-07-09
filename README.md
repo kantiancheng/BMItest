@@ -150,3 +150,8 @@ bmi_result;
 ## 减肥周期计算
 
 ### 待完成……
+
+
+
+# 鸣谢 Thanks
+<a href="https://www.browserstack.com/"><img height="80" src="https://live.browserstack.com/images/opensource/browserstack-logo.svg" alt="BrowserStack Logo"></a>
