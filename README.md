@@ -156,4 +156,4 @@ bmi_result;
 
 # 鸣谢 Thanks
 <a href="[https://www.browserstack.com/"><img height="80" src="https://wp-assets.highcharts.com/svg/highcharts-logo.svg" alt="BrowserStack Logo"></a>
-> 感谢 HighCharts 提供的 ***图表展示*** 服务。  
+> 感谢 **HighCharts** 提供的 ***图表展示*** 服务。  
