@@ -12,6 +12,10 @@
 
 ![](https://kantiancheng.github.io/BMItest/assets/README-img/效果浏览-主页.png)
 
+#### 链接
+
+https://kantiancheng.github.io/BMItest/
+
 <br>
 
 ## 减肥周期计算
