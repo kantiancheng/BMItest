@@ -1,3 +1,4 @@
+bgcolor=#D1EEEE
 # BMI test
 
 - 免登录在线BMI测试
