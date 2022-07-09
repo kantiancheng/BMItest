@@ -97,7 +97,12 @@ bmi_result[1];
 
 ## BMR计算
 
-### 待完成……
+### 第一步: 引入javascript文件
+
+在你的```<html>```文件的```<head>```处插入一句代码:<br>
+```html
+<script type="text/javascript" src="https://kantiancheng.github.io/BMItest/api/bmr.js"></script>
+```
 
 <br>
 
