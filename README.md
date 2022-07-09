@@ -44,6 +44,6 @@ https://kantiancheng.github.io/BMItest/Weight-loss-cycle-calculation/index.html
 <br>
 
 ### 第二步: 调用函数
-```html
+```js
 bmi(height, weight, gender);
 ```
