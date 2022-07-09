@@ -136,7 +136,7 @@ bmi_result;
         function run_bmr() {
             //身高，体重，性别（男=true,女=false），年龄
             bmr(180, 60, true, 25);
-            alert("你的BMR(基础代谢指数)为:" + bmi_result);
+            alert("你的BMR(基础代谢指数)为:" + bmr_result);
         }
     </script>
 </body>
