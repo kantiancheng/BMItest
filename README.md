@@ -118,6 +118,32 @@ bmr(/*身高(cm)*/, /*体重(kg)*/, /*性别(true为男性，false为女性)*/,/
 bmi_result;
 ```
 
+### 完整实例
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--引入API-->
+    <script type="text/javascript" src="https://kantiancheng.github.io/BMItest/api/bmr.js"></script>
+</head>
+
+<body>
+    <button onclick="run_bmr();">获取BMR</button>
+    <script>
+        function run_bmr() {
+            //身高，体重，性别（男=true,女=false），年龄
+            bmr(180, 60, true, 25);
+            alert("你的BMR(基础代谢指数)为:" + bmi_result);
+        }
+    </script>
+</body>
+
+</html>
+
+```
 
 <br>
 
