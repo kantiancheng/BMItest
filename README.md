@@ -46,3 +46,19 @@ https://kantiancheng.github.io/BMItest/Weight-loss-cycle-calculation/index.html
 ```js
 bmi(/*身高(cm)*/, /*体重(kg)*/, /*性别(true为男性，false为女性)*/);
 ```
+
+### 第三步: 计算结果
+
+计算结果会以数组的形式返回
+
+```js
+//BMI值
+bmi_result[0];
+
+//BMI是否在正常(健康)范围内
+bmi_result[1];
+//true代表正常
+//false代表
+
+```
+
