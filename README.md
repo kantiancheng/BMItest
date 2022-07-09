@@ -41,7 +41,6 @@ https://kantiancheng.github.io/BMItest/Weight-loss-cycle-calculation/index.html
 ```html
 <script type="text/javascript" src="https://kantiancheng.github.io/BMItest/api/bmi.js"></script>
 ```
-<br>
 
 ### 第二步: 调用函数
 ```js
