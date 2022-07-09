@@ -20,7 +20,7 @@
 #### 「效果浏览」
 
 
-![](https://kantiancheng.github.io/BMItest/assets/README-img/效果浏览-代谢.mov)
+![](https://kantiancheng.github.io/BMItest/assets/README-img/效果浏览-代谢.gif)
 
 #### 链接
 
