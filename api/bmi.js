@@ -15,7 +15,7 @@ function bmi(height, weight, gender) {
     if (weight == 0) {
         error_cos = error_cos + "," + "体重不能为0";
     }
-    if (gender == null && height == 0 && weight == 0) console.error("BMI接口计算错误，原因:" + error_cos);
+    if (gender == null || height == 0 || weight == 0) console.error("BMI接口计算错误，原因:" + error_cos);
     if (gender != null && height != 0 && weight != 0) start_test();
 
     function start_test() {
@@ -41,6 +41,8 @@ function bmi(height, weight, gender) {
             } else {
                 bmi_result[1] = false;
             }
+        } else {
+            console.error("bmi接口遇到未知错误");
         }
     }
 }
