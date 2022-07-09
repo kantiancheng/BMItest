@@ -1,4 +1,5 @@
-bgcolor=#D1EEEE
+--tw-bg-opacity: 1;
+background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
 # BMI test
 
 - 免登录在线BMI测试
