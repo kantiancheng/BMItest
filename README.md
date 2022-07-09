@@ -88,3 +88,8 @@ bmi_result[1];
 </html>
 
 ```
+
+<br>
+
+## BMR计算
+
