@@ -62,3 +62,29 @@ bmi_result[1];
 
 ```
 
+### 完整实例
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--引入API-->
+    <script type="text/javascript" src="https://kantiancheng.github.io/BMItest/api/bmi.js"></script>
+</head>
+
+<body>
+    <button onclick="run_bmi();">获取BMI</button>
+    <script>
+        function run_bmi() {
+            //身高，体重，性别（男=true,女=false）
+            bmi(180, 60, true);
+            alert("你的BMI为:" + bmi_result[0] + "," + "你的BMI是否在正常范围内:" + bmi_result[1]);
+        }
+    </script>
+</body>
+
+</html>
+
+```
