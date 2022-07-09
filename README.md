@@ -34,11 +34,7 @@ https://kantiancheng.github.io/BMItest/Weight-loss-cycle-calculation/index.html
 
 ### 第一步: 引入javascript文件
 
-在你的```html
-<html>
-```文件的```html
-<head>
-```处插入一句代码:<br>
+在你的```html<html>```文件的```html<head>```处插入一句代码:<br>
 ```html
 <script type="text/javascript" src="https://kantiancheng.github.io/BMItest/api/bmi.js"></script>
 ```
