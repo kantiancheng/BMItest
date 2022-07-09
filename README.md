@@ -104,6 +104,11 @@ bmi_result[1];
 <script type="text/javascript" src="https://kantiancheng.github.io/BMItest/api/bmr.js"></script>
 ```
 
+### 第二步: 调用函数
+```js
+bmr(/*身高(cm)*/, /*体重(kg)*/, /*性别(true为男性，false为女性)*/,/*年龄*/);
+```
+
 <br>
 
 ## 减肥周期计算计算
