@@ -30,6 +30,8 @@ https://kantiancheng.github.io/BMItest/Weight-loss-cycle-calculation/index.html
 
 <br>
 
-# API
+## BMI计算
 
-## 正在制作……
+#### 第一步: 引入javascript文件
+
+在你的**html**文件的**head**处插入`<script type="text/javascript" src="https://kantiancheng.github.io/BMItest/api/bmi.js"></script>`
