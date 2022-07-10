@@ -38,6 +38,11 @@ var calculate = [
 ];
 var calculate30 = [];
 
+//加载
+function loding() {
+    document.getElementById("loding").hidden = true;
+}
+
 //检测是否是新用户
 function beb() {
     if (new_page != '代谢测试') {
@@ -96,6 +101,7 @@ onload = function loadon() {
     }
     hengshuping();
     mobile();
+    loding();
 }
 
 //提示
