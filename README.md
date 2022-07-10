@@ -29,7 +29,7 @@ https://kantiancheng.github.io/BMItest/
 
 ### 项目链接
 
-https://kantiancheng.github.io/BMItest/Weight-loss-cycle-calculation/index.html
+https://kantiancheng.github.io/BMItest/Weight-loss-cycle-calculation/
 
 <br>
 
