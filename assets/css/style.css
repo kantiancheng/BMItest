@@ -489,3 +489,10 @@ h3 {
         border-radius: 10px;
     }
 }
+
+.loding {
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
