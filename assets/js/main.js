@@ -95,6 +95,7 @@ onload = function loadon() {
         }
     }
     hengshuping();
+    mobile();
 }
 
 //提示
@@ -331,6 +332,10 @@ function get_BMR() {
     document.getElementById("result_day").innerHTML = BMR_day + BMR_day$;
 }
 
-/*var myselect = document.getElementById("BMR_sl");
-var index = myselect.selectedIndex;
-myselect[index].value;*/
+function mobile() {
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+        if (new_page == "代谢测试") {
+            document.getElementById("zoom").style.zoom = '160%';
+        }
+    }
+}
