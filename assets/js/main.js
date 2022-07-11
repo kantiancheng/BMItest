@@ -367,7 +367,7 @@ function get_BMR_Start() {
 
 function mobile() {
     if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-        if (new_page == "代谢测试") {
+        if (new_page == "代谢测试" || new_page == "设定目标" || new_page == "设定基础") {
             document.getElementById("zoom").style.zoom = '160%';
         }
     }
