@@ -99,7 +99,11 @@ onload = function loadon() {
             resulte();
         }
     }
-    hengshuping();
+    try {
+        hengshuping();
+    } catch (error) {
+
+    }
     mobile();
     loding();
 }
@@ -256,6 +260,29 @@ function targetpersent() {
 var BMR_re;
 
 function get_BMR() {
+    var errore = '';
+    myselect = document.getElementById("BMR_sex");
+    var index = myselect.selectedIndex;
+    var gender = myselect[index].value;
+    if (gender == "NO") errore = errore + "性别，";
+    if (document.getElementById("BMR_age").value == "" || document.getElementById("BMR_age").value == null) errore = errore + "年龄，";
+    if (document.getElementById("BMR_wi").value == "" || document.getElementById("BMR_wi").value == null) errore = errore + "体重，";
+    if (document.getElementById("BMR_hi").value == "" || document.getElementById("BMR_hi").value == null) errore = errore + "身高，";
+    if (document.getElementById("BMR_hu").value == "" || document.getElementById("BMR_hu").value == null) errore = errore + "摄入热量，";
+    if (document.getElementById("BMR_tim").value == "" || document.getElementById("BMR_tim").value == null) errore = errore + "运动时间，";
+    myselectit = document.getElementById("BMR_sl");
+    var indexit = myselectit.selectedIndex;
+    var genderit = myselectit[indexit].value;
+    if (genderit == 'NO') errore = errore + "运动类型，";
+    if (errore != null && errore != "") {
+        errore = errore + "不能为空！";
+        inform(errore, 4000);
+    } else {
+        get_BMR_Start();
+    }
+}
+
+function get_BMR_Start() {
     document.getElementById("t_s").hidden = true;
     document.getElementById("t_d").hidden = false;
     //性别
@@ -284,7 +311,7 @@ function get_BMR() {
     var BMR_hu = document.getElementById("BMR_hu").value;
     //运动时间
     var BMR_time = document.getElementById("BMR_tim").value;
-
+    //运动类型
     myselectit = document.getElementById("BMR_sl");
     var indexit = myselectit.selectedIndex;
     var genderit = myselectit[indexit].value;
